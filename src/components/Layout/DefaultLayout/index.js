@@ -5,9 +5,9 @@ import Sidebar from './Sidebar';
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
   return (
-    <div className={cx('warpper-default')}>
+    <div className={cx('warpper')}>
       <Header></Header>
-      
+
       <div className={cx('container')}>
         <Sidebar></Sidebar>
 

@@ -3,7 +3,7 @@ import styles from './Sidebar.moduel.scss';
 const cx = classNames.bind(styles);
 function Sidebar() {
   return (
-    <aside className={cx('warpper-sidebar')}>
+    <aside className={cx('warpper')}>
       <h2>sidebar</h2>
     </aside>
   );
