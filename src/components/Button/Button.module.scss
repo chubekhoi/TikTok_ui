@@ -1,0 +1,74 @@
+.wrapper {
+  display: inline-flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  min-width: 100px;
+  padding: 9px 16px;
+  border-radius: 4px;
+
+  cursor: pointer;
+  background-color: var(--white);
+  border: 1px solid transparent;
+  user-select: none;
+  + .wrapper {
+    margin-left: 6px;
+  }
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+//buton types
+.rounded {
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+  border: 1px solid rgba(22, 24, 35, 0.12);
+
+  &:hover {
+    border-color: rgba(22, 24, 35, 0.2);
+    background-color: rgb(255, 255, 255);
+  }
+}
+
+.primary {
+  color: var(--white);
+  border: var(--color-titok);
+  background-color: rgb(254, 44, 85);
+  &:hover {
+    background-color: var(--color-titok);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+      rgb(254, 44, 85);
+  }
+}
+
+.outline {
+  color: var(--color-titok);
+  border-color: var(--color-titok);
+  &:hover {
+    border-color: var(--color-titok);
+    background: rgba(254, 44, 85, 0.06);
+  }
+}
+.text {
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  border-radius: 2px;
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+}
+
+//button size
+.small {
+  padding: 4px 16px;
+}
+.large {
+  padding: 14px 16px;
+  min-width: 150px;
+}
+//select icon
+.icon + .title,
+.title + .icon {
+  margin-left: 8px;
+}

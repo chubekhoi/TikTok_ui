@@ -8,14 +8,15 @@ import {
   faCircleXmark,
   faSpinner,
   faMagnifyingGlass,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
-
+import Button from '~/components/Button';
 import { Warpper as PoperWarpper } from '../../Popper/index';
 import images from '~/asset/images';
 import SearchAccountItem from '../../SreachAccountItem';
 const cx = classNames.bind(styles);
 function Header({ children }) {
-  const [searchResult, setSearchResult] = useState([1, 2]);
+  const [searchResult, setSearchResult] = useState([]);
   return (
     <header className={cx('warpper')}>
       <div className={cx('inner')}>
@@ -57,7 +58,15 @@ function Header({ children }) {
             </button>
           </div>
         </Tippy>
-        <div className={cx('acction')}></div>
+        <div className={cx('acction')}>
+          <Button
+            text
+            rightIcon={<FontAwesomeIcon icon={faPlus}></FontAwesomeIcon>}
+          >
+            upload
+          </Button>
+          <Button primary>Log in</Button>
+        </div>
       </div>
     </header>
   );
