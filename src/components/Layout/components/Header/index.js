@@ -27,11 +27,24 @@ const MENU_ITEMS = [
   {
     icon: <FontAwesomeIcon icon={faEarthEurope} />,
     title: 'English',
+    children: {
+      title: 'Language',
+      data: [
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiềng Việt',
+        },
+      ],
+    },
   },
   {
     icon: <FontAwesomeIcon icon={faQuestion} />,
     title: 'Feedback and help',
-    to:'/feedback'
+    to: '/feedback',
   },
   {
     icon: <FontAwesomeIcon icon={faKeyboard} />,
@@ -40,6 +53,10 @@ const MENU_ITEMS = [
 ];
 function Header({ children }) {
   const [searchResult, setSearchResult] = useState([]);
+  // handle logic
+  const handleMenuChange = function (MenuItem) {
+    console.log(MenuItem);
+  };
   return (
     <header className={cx('warpper')}>
       <div className={cx('inner')}>
@@ -89,7 +106,7 @@ function Header({ children }) {
             upload
           </Button>
           <Button primary>Log in</Button>
-          <Menu items={MENU_ITEMS}>
+          <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
             <button className={cx('more-btn')}>
               <FontAwesomeIcon icon={faEllipsisVertical}></FontAwesomeIcon>
             </button>
