@@ -14,7 +14,6 @@ function Menu({ children, items = [], onChange = defaultFn }) {
   const renderItems = function () {
     return current.data.map(function (item, index) {
       const isParent = !!item.children;
-
       return (
         <MenuItem
           key={index}
@@ -36,8 +35,8 @@ function Menu({ children, items = [], onChange = defaultFn }) {
     <>
       <Tippy
         interactive
-        visible
         placement="bottom-end"
+        offset={[12, 8]}
         delay={[0, 700]}
         render={(attrs) => {
           return (
@@ -57,6 +56,11 @@ function Menu({ children, items = [], onChange = defaultFn }) {
               </PoperWarpper>
             </div>
           );
+        }}
+        onHide={function () {
+          return setHistotry(function (pre) {
+            return pre.slice(0, 1);
+          });
         }}
       >
         {children}

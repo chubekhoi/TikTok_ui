@@ -90,10 +90,40 @@
     background: rgba(22, 24, 35, 0.06);
   }
 }
+//action
+
+.acction {
+  display: flex;
+  align-items: center;
+}
+.acction-btn {
+  background-color: transparent;
+  font-size: 2.2rem;
+  color: #161823;
+  padding: 4px;
+  cursor: pointer;
+}
 
 .more-btn {
   font-size: 2rem;
   margin-left: 25px;
   padding: 4px 8px;
   background: transparent;
+}
+.user-avatar {
+  width: 20px;
+  cursor: pointer;
+}
+.acction-btn + .acction-btn {
+  margin-left: 15px;
+}
+.acction-btn + .user-avatar {
+  margin-left: 30px;
+}
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 50%;
+  cursor: pointer;
 }
